@@ -32,6 +32,10 @@ public class main {
         boolean isOnline = true;
 
         String name ="Shaquille Griffith";
+        String food ="pizza";
+        String email ="fake123@gmail.com";
+        String car ="Mustang";
+        String color = "red";
 
 
 
@@ -56,6 +60,12 @@ public class main {
             System.out.println("You are not a student");
         }
 
-        System.out.println(name);
+        System.out.println("Hello " + name);
+        System.out.println("Your favorite food is " + food);
+        System.out.println("Your email is " + email);
+        System.out.println("You are " + age + " years old");
+        System.out.println("Your gpa is " + gpa);
+        System.out.println("Your average letter grade is: " + grade);
+        System.out.println("Your choice is a " +color + " " + year + " " + car);
     }
 }
