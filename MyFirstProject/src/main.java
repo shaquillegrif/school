@@ -18,24 +18,30 @@ public class main {
         int age = 30;
         int year = 2025;
         int quantity = 1;
+        int gta = 6;
 
         double price = 19999.99;
         double gpa = 3.5;
         double temperature = -12.5;
+        double pi = 3.14159;
 
         char grade = 'A';
         char symbol = '!';
         char currency = '$';
+        char gender = 'M';
+
 
         boolean isStudent = true;
         boolean forSale = true;
         boolean isOnline = true;
+        boolean isAdmin = false;
 
         String name ="Shaquille Griffith";
         String food ="pizza";
         String email ="fake123@gmail.com";
         String car ="Mustang";
         String color = "red";
+        String herru = "pinda";
 
 
 
