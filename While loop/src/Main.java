@@ -8,7 +8,8 @@ public class Main {
 
         String name = "";
         String response = "";
-        int age = -1;
+        int age = 0;
+        int number = 0;
 
         while (name.isEmpty()){
             System.out.print("Please enter your name: ");
@@ -24,16 +25,24 @@ public class Main {
         }
         System.out.println("you have quit the game");
 
-        System.out.println("Enter your age");
+        System.out.print("Enter your age: ");
         age = Integer.parseInt(scanner.nextLine());
 
         while (age < 0){
-            System.out.println("Your age cant be negative");
-            System.out.println("Enter your age");
+            System.out.print("Your age cant be negative");
+            System.out.print("Enter your age: ");
             age = Integer.parseInt(scanner.nextLine());
         }
+
+
         System.out.println("You are " + age + " years old");
 
+        do {
+            System.out.print("Your number must be between 1 and 10: ");
+            number = Integer.parseInt(scanner.nextLine());
+        }while (number < 1||number > 10);
+
+        System.out.println("you picked " + number);
         scanner.close();
     }
 }
