@@ -8,6 +8,7 @@ public class Main {
 
         String name = "";
         String response = "";
+        int age = -1;
 
         while (name.isEmpty()){
             System.out.print("Please enter your name: ");
@@ -22,6 +23,16 @@ public class Main {
             response = scanner.nextLine().toUpperCase();
         }
         System.out.println("you have quit the game");
+
+        System.out.println("Enter your age");
+        age = Integer.parseInt(scanner.nextLine());
+
+        while (age < 0){
+            System.out.println("Your age cant be negative");
+            System.out.println("Enter your age");
+            age = Integer.parseInt(scanner.nextLine());
+        }
+        System.out.println("You are " + age + " years old");
 
         scanner.close();
     }
