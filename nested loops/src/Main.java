@@ -17,9 +17,14 @@ public class Main {
         System.out.print("Enter the symbol: ");
         symbol = scanner.next().charAt(0);
 
-        for (int i = 0; i <= columns; i++) {
-            System.out.print(symbol);
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 0; j <= columns; j++) {
+                System.out.print(symbol);
+            }
+            System.out.println();
         }
+
+
 
         scanner.close();
     }
