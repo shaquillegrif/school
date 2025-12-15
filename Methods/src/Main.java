@@ -6,6 +6,11 @@ public class Main {
 
 
         happyBirthday(name, age);
+        System.out.println(square(3));
+        System.out.println(cube(3));
+
+
+
     }
         static void happyBirthday(String name, int age) {
             System.out.println("Happy birthday to you!");
@@ -13,4 +18,11 @@ public class Main {
             System.out.printf("you are %d years old!\n", age);
             System.out.println("happy birthday to you!\n");
         }
+        static double square(double number) {
+            return number * number;
+    }
+    static double cube(double number) {
+        return number * number * number;
+    }
+
 }
