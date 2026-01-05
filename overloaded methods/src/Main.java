@@ -3,7 +3,10 @@ public class Main {
 
         System.out.println(add (1, 2));
         System.out.println(add(1, 2, 3));
+        System.out.println(add(1, 2, 3, 9));
 
+        String pizza = bakePizza("flat bread");
+        System.out.println(pizza);
     }
 
     static double add(double a, double b) {
@@ -11,5 +14,11 @@ public class Main {
     }
     static double add(double a, double b, double c) {
         return a + b + c;
+    }
+    static double add(double a, double b, double c, double d) {
+        return a + b + c + d;
+    }
+    static String bakePizza(String bread){
+        return bread + " pizza";
     }
 }
