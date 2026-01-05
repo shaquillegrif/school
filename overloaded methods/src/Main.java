@@ -5,7 +5,7 @@ public class Main {
         System.out.println(add(1, 2, 3));
         System.out.println(add(1, 2, 3, 9));
 
-        String pizza = bakePizza("flat bread", "young cheese ");
+        String pizza = bakePizza("flat bread", "young cheese ", "salami ");
         System.out.println(pizza);
     }
 
@@ -20,5 +20,8 @@ public class Main {
     }
     static String bakePizza(String bread, String cheese) {
         return cheese + bread + " pizza";
+    }
+    static String bakePizza(String bread, String cheese, String topping) {
+        return topping + cheese + bread + " pizza";
     }
 }
