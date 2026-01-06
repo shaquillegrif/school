@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
         // DECLARE VARIABLES
-        Scanner scanner = new Scanner(System.in);
         double balance = 0;
         boolean isRunning = true;
         int choice;
@@ -21,7 +21,7 @@ public class Main {
             choice = scanner.nextInt();
             switch(choice) {
                 case 1 -> showBalance(balance);
-                case 2 -> System.out.println("deposit");
+                case 2 -> balance += deposit();
                 case 3 -> System.out.println("withdraw");
                 case 4 -> isRunning = false;
                 default -> System.out.println("Invalid choice!");
@@ -46,5 +46,18 @@ public class Main {
     static  void showBalance(double balance) {
         System.out.println("*******************************");
         System.out.printf("$%.2f%n", balance);
+    }
+    static double deposit() {
+        double amount;
+        System.out.println("Enter amount to deposit: ");
+        amount = scanner.nextDouble();
+        if(amount < 0) {
+            System.out.println("Invalid amount!");
+            return 0;
+        }
+        else{
+            return amount;
+
+        }
     }
 }
