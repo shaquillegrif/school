@@ -7,6 +7,10 @@ public class Main {
        };
 
         for (Car car : cars) {
+            car.color = "black";
+        }
+        
+        for (Car car : cars) {
             car.drive();
         }
     }
