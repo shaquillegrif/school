@@ -5,7 +5,8 @@ public class Main {
         Friend friend2 = new Friend("jimmy");
         Friend friend3 = new Friend("henk");
         Friend friend4 = new Friend("charlie");
+        Friend friend5 = new Friend("timmy");
 
-        System.out.println(Friend.numOfFriends);
+      Friend.showFriends();
     }
 }
