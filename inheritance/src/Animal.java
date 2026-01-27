@@ -1,10 +1,6 @@
-public class Animal {
+public class Animal extends Organism{
 
-    boolean isAlive;
 
-    Animal(){
-        isAlive = true;
-    }
     void eat(){
         System.out.println("Animal is eating");
     }

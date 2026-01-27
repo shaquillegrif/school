@@ -3,6 +3,7 @@ public class Main {
 
         Dog dog = new Dog();
         Cat cat = new Cat();
+        Plant plant = new Plant();
 
        dog.eat();
        cat.eat();
@@ -12,6 +13,13 @@ public class Main {
 
         dog.speak();
         cat.speak();
+
+        System.out.println(dog.isAlive);
+        System.out.println(cat.isAlive);
+
+        System.out.println(plant.isAlive);
+
+        plant.photosynthesize();
 
     }
 }
