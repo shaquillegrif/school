@@ -19,4 +19,11 @@ public class Car {
     String getPrice() {
         return "$" + this.price;
     }
+
+    void setColor(String color) {
+        this.color = color;
+    }
+    void setPrice(int price) {
+        this.price = price;
+    }
 }
