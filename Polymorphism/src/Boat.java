@@ -1,8 +1,7 @@
-public class Boat extends Vehicle {
+public class Boat implements Vehicle {
 
     @Override
-    void go()
-    {
+    public void go(){
         System.out.println("You sail the boat");
     }
 }
