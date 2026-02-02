@@ -17,7 +17,7 @@ public class Main {
         else if (choice == 2) {
             animal = new Cat();
             animal.speak();
-        }1
+        }
 
 
         scanner.close();
