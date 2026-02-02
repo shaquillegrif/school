@@ -8,8 +8,8 @@ public class Main {
 
         Book[] books = {book1, book2, book3};
 
-        for (Book book : books) {
-            System.out.println(book.displayInfo());
-        }
+        Library library = new Library("NYC public library", 1897, books);
+
+        library.displayInfo();
     }
 }
