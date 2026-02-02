@@ -6,5 +6,7 @@ public class Main {
         System.out.println(car.model);
         System.out.println(car.year);
         System.out.println(car.engine.type);
+
+        car.start();
     }
 }
