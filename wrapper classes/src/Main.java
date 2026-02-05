@@ -18,8 +18,12 @@ public class Main {
 
         String a1 = Integer.toString(123);
         String a2 = Double.toString(3.14);
-        String a3 = Character.toString('$');
-        String a4 = Boolean.toString(true);
+        String a3 = Character.toString('@');
+        String a4 = Boolean.toString(false);
+
+
+        String xn = a1 + a2 + a3 + a4;
+        System.out.println(xn);
 
     }
 }
