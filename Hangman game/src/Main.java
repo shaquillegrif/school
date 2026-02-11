@@ -10,13 +10,50 @@ public class Main {
         int wrongGuesses = 0;
 
         for (int i = 0; i < word.length(); i++) {
-            wordstate.add('-');
+            wordstate.add('_');
         }
         System.out.println("##################");
         System.out.println("welcome to Hangman");
         System.out.println("##################");
 
-        System.out.println(getHangmanArt(0));
+        while(wrongGuesses < 6){
+            System.out.print(getHangmanArt(wrongGuesses));
+            System.out.print("Word: ");
+
+            for (char c : wordstate) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+
+            System.out.print("Guess a letter: ");
+            char guess = scanner.next().toLowerCase().charAt(0);
+
+            if(word.indexOf(guess) >= 0){
+                System.out.println("correct guess");
+
+                for(int i = 0; i < word.length(); i++){
+                    if(word.charAt(i) == guess){
+                        wordstate.set(i, guess);
+
+                    }
+                }
+                if(!wordstate.contains('_')){
+                    System.out.println(getHangmanArt(wrongGuesses));
+                    System.out.println("you win");
+                    System.out.println("the word was: " + word);
+                    break;
+                }
+            }
+            else {
+                wrongGuesses++;
+                System.out.println("incorrect guess");
+            }
+        }
+        if(wrongGuesses >= 6){
+            System.out.println(getHangmanArt(wrongGuesses));
+            System.out.println("game over");
+            System.out.println("the word is " + word);
+        }
 
         scanner.close();
     }
