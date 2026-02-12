@@ -28,7 +28,7 @@ public class Main {
         Random random = new Random();
 
         String word = words.get(random.nextInt(words.size()));
-        
+
 
         Scanner scanner = new Scanner(System.in);
         ArrayList<Character> wordstate = new ArrayList<>();
