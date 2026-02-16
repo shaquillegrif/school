@@ -30,5 +30,10 @@ public class Main {
         if(dateTime1.isBefore(dateTime2)) {
             System.out.println(dateTime1 + " is before " + dateTime2);
         }
+        else if(dateTime1.isAfter(dateTime2)) {
+            System.out.println(dateTime1 + " is after " + dateTime2);
+        } else if (dateTime1.isEqual(dateTime2)) {
+            System.out.println(dateTime1 + " is equal to " + dateTime2);
+        }
     }
 }
