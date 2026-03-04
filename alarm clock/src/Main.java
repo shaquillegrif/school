@@ -9,22 +9,23 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        LocalTime alarmTime;
+        LocalTime alarmTime = null;
 
-        try{
+        while (alarmTime == null) {
+            try{
+                System.out.print("Please enter your alarm time (HH:mm:ss): ");
+                String inputTime = scanner.nextLine();
 
-            System.out.println("Welcome to the Alarm Clock!");
-            System.out.print("Please enter your alarm time (HH:mm:ss): ");
-            String inputTime = scanner.nextLine();
-
-            alarmTime = LocalTime.parse(inputTime, formatter);
-            System.out.println("alarm set for " + alarmTime);
+                alarmTime = LocalTime.parse(inputTime, formatter);
+                System.out.println("alarm set for " + alarmTime);
 
 
+            }
+            catch (DateTimeParseException e){
+                System.out.println("Invalid time format");
+            }
         }
-        catch (DateTimeParseException e){
-            System.out.println("Invalid time format");
-        }
+
 
         scanner.close();
     }
