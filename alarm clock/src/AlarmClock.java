@@ -1,17 +1,19 @@
 import javax.sound.sampled.*;
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalTime;
+import java.util.Scanner;
 
 public class AlarmClock implements Runnable{
 
     private final LocalTime alarmTime;
     private final String filePath;
+    private final Scanner scanner;
 
-    AlarmClock(LocalTime alarmTime, String filePath){
+    AlarmClock(LocalTime alarmTime, String filePath, Scanner scanner){
         this.alarmTime = alarmTime;
         this.filePath = filePath;
+        this.scanner = new Scanner(System.in);
     }
 
     @Override
@@ -43,16 +45,17 @@ public class AlarmClock implements Runnable{
             Clip clip = AudioSystem.getClip();
             clip.open(audioStream);
             clip.start();
+            System.out.print("press *enter* to stop the alarm");
+            scanner.nextLine();
+            clip.stop();
+            scanner.close();
 
-            Thread.sleep(5000);
         } catch (UnsupportedAudioFileException e) {
             System.out.println("Audio file not supported");
         }catch (LineUnavailableException e){
             System.out.println("Audio is unavailable");
         } catch (IOException e) {
             System.out.println("IO Error");
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         }
     }
 }
