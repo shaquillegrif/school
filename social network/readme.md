@@ -1,6 +1,6 @@
 # Projectnaam
 
-Modenre hyves
+Moderne hyves
 
 # Omschrijving
 
