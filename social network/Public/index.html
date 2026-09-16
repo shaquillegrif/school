@@ -1,59 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibely</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div>
-    <img src="/files/logo.png" alt="">
-</div>
+<div class="nav">
 
-<div class="topnav">
+  <div class="logo">
+    <span class="logo-icon">✦</span>
+    <span class="wordmark">Vibely</span>
+  </div>
+
+  <div class="search">
+    <span class="search-icon">🔍</span>
     <input type="text" placeholder="Search..">
+  </div>
+
+  <div class="nav-links">
     <div class="nav-item active" data-tab="Home"><span class="emoji">🏠</span>Home</div>
     <div class="nav-item" data-tab="Vrienden"><span class="emoji">👥</span>Vrienden</div>
     <div class="nav-item" data-tab="Foto's"><span class="emoji">🖼️</span>Foto's</div>
     <div class="nav-item" data-tab="Groepen"><span class="emoji">⭐</span>Groepen</div>
-    <div class="nav-item" data-tab="Berichten" id="navBerichten"><span class="emoji">✉️</span>Berichten<span class="badge" id="badgeBerichten"></span>
+    <div class="nav-item" data-tab="Berichten" id="navBerichten">
+      <span class="emoji">✉️</span>Berichten
+      <!-- zet hier het aantal ongelezen berichten in, leeg = geen badge -->
+      <span class="badge" id="badgeBerichten"></span>
+    </div>
+  </div>
+
+  <div class="profile">
+    <!-- profielfoto ingelogde gebruiker -->
+    <img src="" alt="Profielfoto">
+  </div>
+
 </div>
 
-<div>
-    <img src="/files/blank-avatar-placeholder-grey-vector-21806614.png" alt="">
+<div class="page">
+
+  <div class="main-col">
+
+    <form class="post-box">
+      <div class="post-header">
+        <!-- profielfoto ingelogde gebruiker -->
+        <img src="" alt="Profielfoto">
+        <textarea name="post" placeholder="Wat doe jij nu?" required></textarea>
+      </div>
+
+      <div class="post-actions">
+        <button type="button" aria-label="Foto toevoegen">📷</button>
+        <button type="button" aria-label="Emoji toevoegen">😊</button>
+        <button type="button" aria-label="Locatie toevoegen">🌐</button>
+        <button type="submit">Plaatsen</button>
+      </div>
+    </form>
+
+    <!-- =====================================================
+         FEED
+         herhaal onderstaand blok (of een variant, zie hieronder)
+         voor elk item uit de database
+         ===================================================== -->
+
+    <!-- variant: post met foto's -->
+    <div class="card">
+      <div class="card-head">
+        <img src="" alt="">
+        <div class="who">
+          <b>[naam]</b> [actie, bv. "plaatste 4 nieuwe foto's"]<br>
+          <span class="time">[tijd geleden]</span>
+        </div>
+      </div>
+      <p class="card-text">[berichttekst]</p>
+      <div class="photo-grid">
+        <div><img src="" alt=""></div>
+        <div><img src="" alt=""></div>
+        <div><img src="" alt=""></div>
+      </div>
+      <div class="card-meta">
+        <span>❤️ [aantal] vibes</span>
+        <span>💬 [aantal] reacties</span>
+      </div>
+    </div>
+
+    <!-- variant: scrap / bericht naar iemand -->
+    <div class="card">
+      <div class="card-head">
+        <img src="" alt="">
+        <div class="who">
+          <b>[naam afzender]</b> <span class="action">stuurde een scrap aan</span> <b>[naam ontvanger]</b><br>
+          <span class="time">[tijd geleden]</span>
+        </div>
+      </div>
+      <div class="card-quote">[berichttekst]</div>
+      <div class="card-meta">
+        <span>❤️ [aantal] vibes</span>
+        <span>💬 Reageer</span>
+      </div>
+    </div>
+
+    <!-- variant: statusupdate -->
+    <div class="card">
+      <div class="card-head">
+        <img src="" alt="">
+        <div class="who">
+          <b>[naam]</b> <span class="action">[status]</span><br>
+          <span class="time">[tijd geleden]</span>
+        </div>
+      </div>
+      <div class="card-quote">[berichttekst]</div>
+      <div class="card-meta">
+        <span class="liked">❤️ [aantal] vibes</span>
+        <span>💬 [aantal] reacties</span>
+      </div>
+    </div>
+
+    <!-- variant: lid geworden van groep (geen foto/tekst/meta nodig) -->
+    <div class="card">
+      <div class="card-head">
+        <img src="" alt="">
+        <div class="who">
+          <b>[naam]</b> is lid geworden van <b>[groepsnaam]</b><br>
+          <span class="time">[tijd geleden]</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sidebar">
+
+    <div class="panel">
+      <h3>🟢 ONLINE</h3>
+      <!-- herhaal per vriend die online is -->
+      <div class="friend-row"><img src="" alt="">[naam]<span class="dot"></span></div>
+    </div>
+
+    <div class="panel">
+      <h3>MIJN GROEPEN</h3>
+      <!-- herhaal per groep waar gebruiker lid van is -->
+      <div class="group-row"><span class="icon">[emoji]</span>[groepsnaam]</div>
+      <a class="see-all" href="#">Alle groepen ›</a>
+    </div>
+
+    <div class="panel">
+      <h3>VANDAAG JARIG 🎂</h3>
+      <!-- herhaal per vriend die vandaag jarig is, leeg laten als niemand jarig is -->
+      <div class="birthday-row">
+        <img src="" alt="">
+        <div>
+          <div class="name">[naam]</div>
+          <div class="sub">wordt vandaag [leeftijd]!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      Over Vibely &nbsp;·&nbsp; Privacy &nbsp;·&nbsp; Hulp &nbsp;·&nbsp; Blog<br>
+      © 2026 Vibely
+    </div>
+
+  </div>
+
 </div>
 
-<form class="post-box">
-
-    <div class="post-header">
-        <img src="/files/blank-avatar-placeholder-grey-vector-21806614.png" alt="Profielfoto">
-
-        <textarea
-            name="post"
-            placeholder="Wat doe jij nu?"
-            required
-        ></textarea>
-    </div>
-
-    <div class="post-actions">
-        <button type="button" aria-label="Foto toevoegen">
-            📷
-        </button>
-
-        <button type="button" aria-label="Emoji toevoegen">
-            😊
-        </button>
-
-        <button type="button" aria-label="Locatie toevoegen">
-            🌐
-        </button>
-
-        <button type="submit">
-            Plaatsen
-        </button>
-    </div>
-
-</form>
 </body>
 </html>
